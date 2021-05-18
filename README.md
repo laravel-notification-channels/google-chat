@@ -2,11 +2,15 @@
 <img src="https://storage.googleapis.com/thetreehouse-family.appspot.com/google-chat/assets/laravel-notifications%2Bgoogle-chat.png" width="450">
 </p>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/google-chat.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/google-chat)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/laravel-notification-channels/google-chat/run-tests?label=tests)](https://github.com/laravel-notification-channels/google-chat/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/laravel-notification-channels/google-chat/Check%20&%20fix%20styling?label=code%20style)](https://github.com/laravel-notification-channels/google-chat/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/google-chat.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/google-chat)
+<p align="center">
+<a href="https://packagist.org/packages/laravel-notification-channels/google-chat"><img alt="Latest Version on Packagist" src="https://img.shields.io/packagist/v/laravel-notification-channels/google-chat.svg?style=flat-square"></a>
+<a href="LICENSE.md"><img alt="Software License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
+<a href="https://github.com/laravel-notification-channels/google-chat/actions?query=workflow%3A%22PHPUnit+tests%22+branch%3Amain"><img alt="GitHub Tests Action Status" src="https://img.shields.io/github/workflow/status/laravel-notification-channels/google-chat/PHPUnit%20tests/main?label=tests&style=flat-square"></a>
+<a href="https://github.com/laravel-notification-channels/google-chat/actions?query=workflow%3A%22Check+%26+fix+styling%22+branch%3Amain"><img alt="GitHub Code Style Action" src="https://img.shields.io/github/workflow/status/laravel-notification-channels/google-chat/Check%20&%20fix%20styling/main?label=code%20style&style=flat-square"></a>
+<a href="https://packagist.org/packages/laravel-notification-channels/google-chat"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/laravel-notification-channels/google-chat.svg?style=flat-square"></a>
+<a href="composer.json"><img alt="PHP Version Requirements" src="https://img.shields.io/packagist/php-v/laravel-notification-channels/google-chat?style=flat-square"></a>
+<a href="composer.json"><img alt="Laravel Version Requirements" src="https://img.shields.io/badge/laravel-~8.0-gray?logo=laravel&style=flat-square&labelColor=F05340&logoColor=white"></a>
+</p>
 
 <h1>Google Chat - Laravel Notification Channel</h1>
 
