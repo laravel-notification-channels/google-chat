@@ -16,7 +16,7 @@ class Section implements Arrayable
      *
      * @var array
      */
-    protected array $payload = [
+    protected $payload = [
         'widgets' => [],
     ];
 

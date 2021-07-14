@@ -12,7 +12,7 @@ abstract class AbstractButton implements Arrayable
      *
      * @var array
      */
-    protected array $payload = [];
+    protected $payload = [];
 
     /**
      * Set the onClick url.

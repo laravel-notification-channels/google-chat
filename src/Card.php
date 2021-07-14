@@ -15,7 +15,7 @@ class Card implements Arrayable
      *
      * @var array
      */
-    protected array $payload = [
+    protected $payload = [
         'sections' => [],
     ];
 

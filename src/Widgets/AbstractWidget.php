@@ -12,7 +12,7 @@ abstract class AbstractWidget implements Arrayable
      *
      * @var array
      */
-    protected array $payload = [];
+    protected $payload = [];
 
     /**
      * Serialize the widget to an array representation.
