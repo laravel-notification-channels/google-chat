@@ -15,14 +15,14 @@ class GoogleChatMessage implements Arrayable
      *
      * @var array
      */
-    protected array $payload = [];
+    protected $payload = [];
 
     /**
      * The Space's webhook URL where this message should be sent.
      *
      * @var string|null
      */
-    protected ?string $endpoint = null;
+    protected $endpoint = null;
 
     /**
      * Set a specific space's webhook URL where this message should be sent to.
