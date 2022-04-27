@@ -42,7 +42,7 @@ class GoogleChatChannel
         }
 
         /** @var \NotificationChannels\GoogleChat\GoogleChatMessage $message */
-        if (! ($message = $notification->toGoogleChat($notification)) instanceof GoogleChatMessage) {
+        if (! ($message = $notification->toGoogleChat($notifiable)) instanceof GoogleChatMessage) {
             throw CouldNotSendNotification::invalidMessage($message);
         }
 
