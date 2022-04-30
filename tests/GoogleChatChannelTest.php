@@ -30,13 +30,13 @@ class GoogleChatChannelTest extends TestCase
         $notification = $this->createMock(TestNotification::class);
         $notification->expects($this->once())
         ->method('toGoogleChat')
-        ->withAnyParameters()
+        ->with('notifiable')
         ->willReturn('This value is invalid, as it is not an instance of Google Chat Message');
 
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessage("Expected a message instance of type NotificationChannels\GoogleChat\GoogleChatMessage - Actually received string");
 
-        $this->newChannel()->send('foo', $notification);
+        $this->newChannel()->send('notifiable', $notification);
     }
 
     public function test_it_rejects_sending_when_no_space_configured()
