@@ -2,6 +2,9 @@
 
 All notable changes to `google-chat` will be documented in this file
 
+## 3.0.0 - 2022-04-30
+- Correct passing of notification instance instead of notifiable instance
+
 ## 2.0.1 - 2022-04-09
 - Corrected Laravel Framework version constraints, preventing installations on Laravel versions >=9.1
 
