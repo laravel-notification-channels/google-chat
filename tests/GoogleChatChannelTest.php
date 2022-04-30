@@ -25,7 +25,6 @@ class GoogleChatChannelTest extends TestCase
         $this->newChannel()->send('foo', $notification);
     }
 
-    /** @group focus */
     public function test_it_rejects_sending_when_non_google_chat_message_supplied()
     {
         $notification = $this->createMock(TestNotification::class);
