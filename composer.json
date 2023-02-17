@@ -14,8 +14,8 @@
     "require": {
         "php": ">=8.0",
         "guzzlehttp/guzzle": "^6.3 || ^7.0",
-        "illuminate/notifications": "^9.0.2",
-        "illuminate/support": "^9.0.2"
+        "illuminate/notifications": "^9.0.2 || ^10.0",
+        "illuminate/support": "^9.0.2 || ^10.0"
     },
     "require-dev": {
         "orchestra/testbench": "^7.0",
@@ -38,7 +38,7 @@
     "config": {
         "sort-packages": true
     },
-    "extra" : {
+    "extra": {
         "laravel": {
             "providers": [
                 "NotificationChannels\\GoogleChat\\GoogleChatServiceProvider"
