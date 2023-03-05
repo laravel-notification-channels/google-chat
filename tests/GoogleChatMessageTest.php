@@ -205,4 +205,44 @@ class GoogleChatMessageTest extends TestCase
             $message->toArray()
         );
     }
+
+    public function test_it_creates_threaded_messages_by_key()
+    {
+        $message = GoogleChatMessage::create()->thread('test-thread-key');
+
+        $this->assertEquals(
+            [
+                'thread' => [
+                    'threadKey' => 'test-thread-key',
+                ],
+            ],
+            $message->toArray()
+        );
+    }
+
+    public function test_it_creates_threaded_messages_by_name()
+    {
+        $message = GoogleChatMessage::create()->thread('test-thread-name', true);
+
+        $this->assertEquals(
+            [
+                'thread' => [
+                    'name' => 'test-thread-name',
+                ],
+            ],
+            $message->toArray()
+        );
+    }
+
+    public function test_it_recognises_non_threaded_messages()
+    {
+        $message = GoogleChatMessage::create('Example Non-Threaded Message');
+        $this->assertFalse($message->isThreaded());
+    }
+
+    public function test_it_recognises_threaded_messages()
+    {
+        $message = GoogleChatMessage::create('Example Threaded Message')->thread('test-thread-key');
+        $this->assertTrue($message->isThreaded());
+    }
 }
