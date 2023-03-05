@@ -54,6 +54,10 @@ class GoogleChatChannel
             throw CouldNotSendNotification::webhookUnavailable();
         }
 
+        if ($message->isThreaded()) {
+            $endpoint .= '&messageReplyOption=REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD';
+        }
+
         try {
             $this->client->request(
                 'post',
