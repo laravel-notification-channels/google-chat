@@ -213,6 +213,32 @@ class GoogleChatMessage implements Arrayable
     }
 
     /**
+     * Start or reply to a message thread.
+     *
+     * @param string $thread A thread reference that can be reused later to add replies
+     * @param bool $isName Specify the thread using a name rather than a threadKey (not typically wanted)
+     * @return self
+     */
+    public function thread(string $thread, bool $isName = false): GoogleChatMessage
+    {
+        $this->payload['thread'] = [
+            $isName ? 'name' : 'threadKey' => $thread,
+        ];
+
+        return $this;
+    }
+
+    /**
+     * The message is creating or replying to a message thread.
+     *
+     * @return bool
+     */
+    public function isThreaded(): bool
+    {
+        return isset($this->payload['thread']);
+    }
+
+    /**
      * Return the configured webhook URL of the recipient space, or null if this has
      * not been configured.
      *
