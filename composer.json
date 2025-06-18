@@ -1,7 +1,7 @@
 {
-    "name": "laravel-notification-channels/google-chat",
+    "name": "tarfin-labs/google-chat",
     "description": "Google Chat Notification Channel for Laravel (fka. Hangouts Chat)",
-    "homepage": "https://github.com/laravel-notification-channels/google-chat",
+    "homepage": "https://github.com/tarfin-labs/google-chat",
     "license": "MIT",
     "authors": [
         {
