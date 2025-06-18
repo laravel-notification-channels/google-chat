@@ -4,11 +4,12 @@ All notable changes to `google-chat` will be documented in this file
 
 ## 3.1.0 - 2025-01-XX
 
--   Added support for Laravel 12.x
--   Updated Orchestra Testbench to support Laravel 12.x
--   Added support for PHPUnit 11.x
+-   **BREAKING:** Minimum PHP version is now 8.2
+-   **BREAKING:** Now requires Laravel 12.x (dropped support for Laravel 9.x, 10.x, 11.x)
+-   Updated to PHPUnit 11.x
+-   Updated Orchestra Testbench to v10.x for Laravel 12
 -   Updated GitHub Actions to test PHP 8.2, 8.3, and 8.4
--   Updated GitHub Actions to test Laravel 9.x, 10.x, 11.x, and 12.x
+-   Updated Guzzle HTTP to v7.x only
 
 ## 3.0.0 - 2022-04-30
 

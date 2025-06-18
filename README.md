@@ -9,12 +9,12 @@
 <a href="https://github.com/laravel-notification-channels/google-chat/actions?query=workflow%3A%22Check+%26+fix+styling%22+branch%3Amain"><img alt="GitHub Code Style Action" src="https://img.shields.io/github/workflow/status/laravel-notification-channels/google-chat/Check%20&%20fix%20styling/main?label=code%20style&style=flat-square"></a>
 <a href="https://packagist.org/packages/laravel-notification-channels/google-chat"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/laravel-notification-channels/google-chat.svg?style=flat-square"></a>
 <a href="composer.json"><img alt="PHP Version Requirements" src="https://img.shields.io/packagist/php-v/laravel-notification-channels/google-chat?style=flat-square"></a>
-<a href="composer.json"><img alt="Laravel Version Requirements" src="https://img.shields.io/badge/laravel-9.x%20|%2010.x%20|%2011.x%20|%2012.x-gray?logo=laravel&style=flat-square&labelColor=F05340&logoColor=white"></a>
+<a href="composer.json"><img alt="Laravel Version Requirements" src="https://img.shields.io/badge/laravel-12.x-gray?logo=laravel&style=flat-square&labelColor=F05340&logoColor=white"></a>
 </p>
 
 <h1>Google Chat - Laravel Notification Channel</h1>
 
-This package makes it easy to send notifications using [Google Chat](https://developers.google.com/hangouts/chat) , (formerly known as Hangouts Chat) with Laravel 9.x, 10.x, 11.x, and 12.x
+This package makes it easy to send notifications using [Google Chat](https://developers.google.com/hangouts/chat) , (formerly known as Hangouts Chat) with Laravel 12.x
 
 ```php
 class InvoicePaidNotification extends Notification
@@ -54,7 +54,7 @@ class InvoicePaidNotification extends Notification
 }
 ```
 
-> For Laravel 8.x, please use version 1.x of this package.
+> For Laravel 8.x, 9.x, 10.x, and 11.x, please use version 3.0.x of this package.
 
 ## Contents
 
