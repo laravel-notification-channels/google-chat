@@ -229,7 +229,7 @@ class GoogleChatChannelTest extends TestCase
         return new TestNotification;
     }
 
-    private function newNotifiable(string $space = null): TestNotifiable
+    private function newNotifiable(?string $space = null): TestNotifiable
     {
         return new TestNotifiable($space);
     }

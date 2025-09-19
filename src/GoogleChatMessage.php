@@ -157,7 +157,7 @@ class GoogleChatMessage implements Arrayable
      * @param string|null $displayText
      * @return self
      */
-    public function link(string $link, string $displayText = null): GoogleChatMessage
+    public function link(string $link, ?string $displayText = null): GoogleChatMessage
     {
         if ($displayText) {
             $link = "<{$link}|{$displayText}>";
@@ -188,7 +188,7 @@ class GoogleChatMessage implements Arrayable
      * @param string|null $appendText
      * @return self
      */
-    public function mentionAll(string $prependText = null, string $appendText = null): GoogleChatMessage
+    public function mentionAll(?string $prependText = null, ?string $appendText = null): GoogleChatMessage
     {
         $this->text("{$prependText}<users/all>{$appendText}");
 
@@ -262,7 +262,7 @@ class GoogleChatMessage implements Arrayable
      * @param string|null $text
      * @return self
      */
-    public static function create(string $text = null): GoogleChatMessage
+    public static function create(?string $text = null): GoogleChatMessage
     {
         $message = new static;
 

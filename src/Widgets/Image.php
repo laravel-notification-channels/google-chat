@@ -41,7 +41,7 @@ class Image extends AbstractWidget
      * @param string|null $onClickUrl
      * @return self
      */
-    public static function create(string $imageUrl = null, string $onClickUrl = null): Image
+    public static function create(?string $imageUrl = null, ?string $onClickUrl = null): Image
     {
         $widget = new static;
 
