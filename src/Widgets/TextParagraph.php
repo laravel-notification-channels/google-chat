@@ -91,7 +91,7 @@ class TextParagraph extends AbstractWidget
      * @param string|null $displayText
      * @return self
      */
-    public function link(string $link, string $displayText = null): TextParagraph
+    public function link(string $link, ?string $displayText = null): TextParagraph
     {
         return $this->text("<a href=\"{$link}\">".($displayText ?? $link).'</a>');
     }
@@ -112,7 +112,7 @@ class TextParagraph extends AbstractWidget
      * @param string|null $message
      * @return self
      */
-    public static function create(string $message = null): TextParagraph
+    public static function create(?string $message = null): TextParagraph
     {
         $widget = new static;
 

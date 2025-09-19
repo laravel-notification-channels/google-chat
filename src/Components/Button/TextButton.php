@@ -24,7 +24,7 @@ class TextButton extends AbstractButton
      * @param string|null $displayText
      * @return self
      */
-    public static function create(string $url = null, string $displayText = null): TextButton
+    public static function create(?string $url = null, ?string $displayText = null): TextButton
     {
         $button = new static;
 

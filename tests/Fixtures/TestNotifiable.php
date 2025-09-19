@@ -10,7 +10,7 @@ class TestNotifiable
 
     private $space;
 
-    public function __construct(string $space = null)
+    public function __construct(?string $space = null)
     {
         $this->space = $space;
     }

@@ -28,7 +28,7 @@ class Card implements Arrayable
      * @param string|null $imageStyle Configure the avatar image style, one of IMAGE or AVATAR
      * @return self
      */
-    public function header(string $title, string $subtitle = null, string $imageUrl = null, string $imageStyle = null): Card
+    public function header(string $title, ?string $subtitle = null, ?string $imageUrl = null, ?string $imageStyle = null): Card
     {
         $header = [
             'title' => $title,
