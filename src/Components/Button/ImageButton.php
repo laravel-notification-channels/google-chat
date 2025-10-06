@@ -54,7 +54,7 @@ class ImageButton extends AbstractButton
      * @param string|null $icon Either an icon name or URL to the icon image
      * @return self
      */
-    public static function create(string $url = null, string $icon = null): ImageButton
+    public static function create(?string $url = null, ?string $icon = null): ImageButton
     {
         $button = new static;
 
