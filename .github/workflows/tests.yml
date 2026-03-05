@@ -1,42 +1,43 @@
 name: PHPUnit tests
 
 on:
-    - push
-    - pull_request
+  - push
+  - pull_request
 
 jobs:
-    tests:
-        runs-on: ubuntu-latest
-        strategy:
-            fail-fast: true
-            matrix:
-                os: [ubuntu-latest, windows-latest]
-                php: [8.2, 8.1]
-                stability: [prefer-lowest, prefer-stable]
+  tests:
+    runs-on: ubuntu-latest
 
-        name: PHP ${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        php: ['8.1', '8.2', '8.3', '8.4', '8.5']
+        stability: [prefer-lowest, prefer-stable]
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+    name: PHP ${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  tools: composer:v2
-                  coverage: none
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            - name: Setup problem matchers
-              run: |
-                  echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-                  echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
 
-            - name: Install dependencies
-              run: |
-                  composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-            - name: Execute tests
-              run: vendor/bin/phpunit
-              env:
-                  GOOGLE_CHAT_TEST_SPACE: ${{ secrets.GOOGLE_CHAT_TEST_SPACE }}
+      - name: Install dependencies
+        run: |
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
+        env:
+          GOOGLE_CHAT_TEST_SPACE: ${{ secrets.GOOGLE_CHAT_TEST_SPACE }}
