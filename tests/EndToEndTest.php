@@ -133,7 +133,11 @@ class EndToEndTest extends TestCase
     #[Group('external')]
     public function test_it_can_send_message_to_google()
     {
-        Notification::route('googleChat', env('GOOGLE_CHAT_TEST_SPACE'))
+        if (! $space = env('GOOGLE_CHAT_TEST_SPACE')) {
+            $this->markTestSkipped('GOOGLE_CHAT_TEST_SPACE is not set - skipping live Google Chat webhook test.');
+        }
+
+        Notification::route('googleChat', $space)
             ->notify($this->notification);
 
         $this->assertTrue(true);
