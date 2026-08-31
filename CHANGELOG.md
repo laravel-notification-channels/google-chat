@@ -2,6 +2,13 @@
 
 All notable changes to `google-chat` will be documented in this file
 
+## Unreleased
+- Added support for Laravel 13
+- Fixed PHP 8.4+ "implicitly nullable parameter" deprecation warnings across the package
+- Fixed a Guzzle deprecation warning caused by passing a lowercase HTTP method to `Client::request()`
+- Migrated `phpunit.xml.dist` off the removed legacy PHPUnit schema
+- Modernized the PHP CS Fixer config for PHP CS Fixer 3.x
+
 ## 3.0.0 - 2022-04-30
 - Correct passing of notification instance instead of notifiable instance
 

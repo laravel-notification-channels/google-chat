@@ -17,7 +17,7 @@ class GoogleChatChannelTest extends TestCase
 {
     public function test_it_rejects_sending_when_to_google_chat_method_undefined()
     {
-        $notification = $this->createMock(Notification::class);
+        $notification = $this->createStub(Notification::class);
 
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessage('Notification of class: '.get_class($notification).' must define a `toGoogleChat()` method in order to send via the Google Chat Channel');
@@ -63,13 +63,13 @@ class GoogleChatChannelTest extends TestCase
 
         $notification = $this->newNotification();
 
-        $response = $this->createMock(Response::class);
+        $response = $this->createStub(Response::class);
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())
             ->method('request')
             ->with(
-                'post',
+                'POST',
                 'https://chat.googleapis.com/default-space',
                 ['json' => $notification->toGoogleChat($notifiable)->toArray()]
             )
@@ -86,13 +86,13 @@ class GoogleChatChannelTest extends TestCase
 
         $notification = $this->newNotification();
 
-        $response = $this->createMock(Response::class);
+        $response = $this->createStub(Response::class);
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())
             ->method('request')
             ->with(
-                'post',
+                'POST',
                 'https://chat.googleapis.com/notifiable-space',
                 ['json' => $notification->toGoogleChat($notifiable)->toArray()]
             )
@@ -110,13 +110,13 @@ class GoogleChatChannelTest extends TestCase
         $notification = $this->newNotification()
             ->setSpace('https://chat.googleapis.com/notification-space');
 
-        $response = $this->createMock(Response::class);
+        $response = $this->createStub(Response::class);
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())
             ->method('request')
             ->with(
-                'post',
+                'POST',
                 'https://chat.googleapis.com/notification-space',
                 ['json' => $notification->toGoogleChat($notifiable)->toArray()]
             )
@@ -133,13 +133,13 @@ class GoogleChatChannelTest extends TestCase
 
         $notification = $this->newNotification();
 
-        $response = $this->createMock(Response::class);
+        $response = $this->createStub(Response::class);
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())
             ->method('request')
             ->with(
-                'post',
+                'POST',
                 'example-alternate-space',
                 ['json' => $notification->toGoogleChat($notifiable)->toArray()]
             )
@@ -154,13 +154,13 @@ class GoogleChatChannelTest extends TestCase
 
         $notification = $this->newNotification();
 
-        $response = $this->createMock(Response::class);
+        $response = $this->createStub(Response::class);
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())
             ->method('request')
             ->with(
-                'post',
+                'POST',
                 '//example-fallback-space',
                 ['json' => $notification->toGoogleChat($notifiable)->toArray()]
             )
@@ -177,8 +177,8 @@ class GoogleChatChannelTest extends TestCase
 
         $exception = new ClientException(
             'Example 400 level HTTP exception',
-            $this->createMock(Request::class),
-            tap($this->createMock(Response::class), function ($mock) {
+            $this->createStub(Request::class),
+            tap($this->createStub(Response::class), function ($mock) {
                 $mock->method('getStatusCode')->willReturn(400);
             }),
         );
@@ -218,7 +218,7 @@ class GoogleChatChannelTest extends TestCase
     private function newChannel($client = null): GoogleChatChannel
     {
         if (! $client) {
-            $client = $this->createMock(Client::class);
+            $client = $this->createStub(Client::class);
         }
 
         return new GoogleChatChannel($client);
@@ -229,7 +229,7 @@ class GoogleChatChannelTest extends TestCase
         return new TestNotification;
     }
 
-    private function newNotifiable(string $space = null): TestNotifiable
+    private function newNotifiable(?string $space = null): TestNotifiable
     {
         return new TestNotifiable($space);
     }
