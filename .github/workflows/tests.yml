@@ -4,8 +4,16 @@ on:
     - push
     - pull_request
 
+permissions:
+    contents: read # needed to check out the repository
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     tests:
+        name: PHP ${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
         runs-on: ubuntu-latest
         strategy:
             fail-fast: true
@@ -14,14 +22,14 @@ jobs:
                 php: [8.5, 8.4, 8.3]
                 stability: [prefer-lowest, prefer-stable]
 
-        name: PHP ${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}
-
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+              with:
+                  persist-credentials: false
 
             - name: Setup PHP
-              uses: shivammathur/setup-php@v2
+              uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2 (2.37.2)
               with:
                   php-version: ${{ matrix.php }}
                   tools: composer:v2
@@ -29,12 +37,14 @@ jobs:
 
             - name: Setup problem matchers
               run: |
-                  echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-                  echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+                  echo "::add-matcher::$RUNNER_TOOL_CACHE/php.json"
+                  echo "::add-matcher::$RUNNER_TOOL_CACHE/phpunit.json"
 
             - name: Install dependencies
               run: |
-                  composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+                  composer update --$STABILITY --prefer-dist --no-interaction
+              env:
+                  STABILITY: ${{ matrix.stability }}
 
             - name: Execute tests
               run: vendor/bin/phpunit
