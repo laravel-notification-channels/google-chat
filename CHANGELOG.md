@@ -3,6 +3,10 @@
 All notable changes to `google-chat` will be documented in this file
 
 ## Unreleased
+**Breaking:**
+- Raised the minimum PHP version to 8.3 and dropped support for Laravel 9.x - 11.x. These were dropped because `illuminate/mail` (a transitive dependency via `illuminate/notifications`) has no non-vulnerable release on those majors ([CVE-2026-48019](https://github.com/laravel/framework/security/advisories/GHSA-5vg9-5847-vvmq)), and their PHP floors (8.0-8.1) are past PHP's own end of life. If you're on Laravel 9.x - 11.x, use version 3.x of this package instead.
+
+**Fixed:**
 - Added support for Laravel 13
 - Fixed PHP 8.4+ "implicitly nullable parameter" deprecation warnings across the package
 - Fixed a Guzzle deprecation warning caused by passing a lowercase HTTP method to `Client::request()`
