@@ -56,7 +56,7 @@ class GoogleChatChannel
 
         try {
             $this->client->request(
-                'post',
+                'POST',
                 $endpoint,
                 [
                     'json' => $message->toArray(),

@@ -109,7 +109,7 @@ class KeyValue extends AbstractWidget
      * @param string|null $bottomLabel
      * @return self
      */
-    public static function create(string $topLabel = null, string $content = null, string $bottomLabel = null): KeyValue
+    public static function create(?string $topLabel = null, ?string $content = null, ?string $bottomLabel = null): KeyValue
     {
         $widget = new static;
 
