@@ -91,10 +91,6 @@ class CouldNotSendNotification extends \Exception
      */
     public static function clientError(ClientException $exception)
     {
-        if (! $exception->hasResponse()) {
-            return new static('Google Chat responded with an error but no response body was available');
-        }
-
         $statusCode = $exception->getResponse()->getStatusCode();
         $description = $exception->getMessage();
 

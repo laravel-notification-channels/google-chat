@@ -8,6 +8,7 @@ All notable changes to `google-chat` will be documented in this file
 
 **Fixed:**
 - Added support for Laravel 13
+- Added support for Guzzle 8
 - Fixed PHP 8.4+ "implicitly nullable parameter" deprecation warnings across the package
 - Fixed a Guzzle deprecation warning caused by passing a lowercase HTTP method to `Client::request()`
 - Migrated `phpunit.xml.dist` off the removed legacy PHPUnit schema
